@@ -100,7 +100,7 @@ final class OllamaClient implements ModelClientInterface
 
     /**
      * @param array<string, mixed> $options
-     * @param array<string> $topLevelKeys
+     * @param array<string>        $topLevelKeys
      *
      * @return array<string, mixed>
      */
@@ -109,7 +109,7 @@ final class OllamaClient implements ModelClientInterface
         $topLevelOptions = [];
         $nested = [];
 
-        if (isset($options['options']) && is_array($options['options'])) {
+        if (isset($options['options']) && \is_array($options['options'])) {
             $nested = $options['options'];
         }
 
