@@ -174,7 +174,7 @@ final class OllamaClientTest extends TestCase
         $this->assertNotInstanceOf(StreamResult::class, $regularResult);
     }
 
-    public function testChatRequestMovesNonTopLevelOptionsIntoNestedOptions(): void
+    public function testChatRequestMovesNonTopLevelOptionsIntoNestedOptions()
     {
         $httpClient = new MockHttpClient(function (string $method, string $url, array $options) {
             $this->assertSame('POST', $method);
@@ -221,7 +221,7 @@ final class OllamaClientTest extends TestCase
         $this->assertSame(1, $httpClient->getRequestsCount());
     }
 
-    public function testChatRequestMergesExplicitNestedOptionsWithFlatOptions(): void
+    public function testChatRequestMergesExplicitNestedOptionsWithFlatOptions()
     {
         $httpClient = new MockHttpClient(function (string $method, string $url, array $options) {
             $json = $this->decodeRequestJson($options);
@@ -260,7 +260,7 @@ final class OllamaClientTest extends TestCase
         $this->assertSame(1, $httpClient->getRequestsCount());
     }
 
-    public function testChatRequestKeepsStructuredOutputFormatOnTopLevel(): void
+    public function testChatRequestKeepsStructuredOutputFormatOnTopLevel()
     {
         $httpClient = new MockHttpClient(function (string $method, string $url, array $options) {
             $json = $this->decodeRequestJson($options);
@@ -300,7 +300,7 @@ final class OllamaClientTest extends TestCase
         $this->assertSame(1, $httpClient->getRequestsCount());
     }
 
-    public function testEmbedRequestMovesNonTopLevelOptionsIntoNestedOptions(): void
+    public function testEmbedRequestMovesNonTopLevelOptionsIntoNestedOptions()
     {
         $httpClient = new MockHttpClient(function (string $method, string $url, array $options) {
             $this->assertSame('POST', $method);
